@@ -23,6 +23,9 @@ function App() {
           <a href="#contact">Landing Page</a>
         </h3>
         <Routes>
+          <Route exact path="/" element={<Component.Home />} />
+        </Routes>
+        <Routes>
           <Route exact path="/profile" element={<Component.Profile />} />
         </Routes>
         <Routes>
