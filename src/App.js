@@ -9,19 +9,6 @@ function App() {
     <BrowserRouter>
       <Component.NavBar />
       <div className="App">
-        <h1>Navbar Temp</h1>
-        <h3>
-          <a href="#projects">Link to Project Showcase</a>
-        </h3>
-        <h3>
-          <a href="#personal">Link to About Me</a>
-        </h3>
-        <h3>
-          <a href="#contact">Link to Contact Me</a>
-        </h3>
-        <h3>
-          <a href="#contact">Landing Page</a>
-        </h3>
         <Routes>
           <Route exact path="/" element={<Component.Home />} />
         </Routes>

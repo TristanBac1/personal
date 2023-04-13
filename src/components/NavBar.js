@@ -1,11 +1,15 @@
 import { useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
+import Image from "react-bootstrap/Image";
 import Navbar from "react-bootstrap/Navbar";
+import LinkedIn from "../img/linkedin.svg";
+import TempPic from "../img/temp-pic.svg";
+import GitHub from "../img/github.svg";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
 const NavBar = () => {
-  const [activeLink, setActiveLink] = useState("home");
+  const [activeLink, setActiveLink] = useState("");
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -35,14 +39,22 @@ const NavBar = () => {
   }, []);
 
   return (
-    <Navbar bg="light" expand="lg" className={scrolled ? "scrolled" : ""}>
+    <Navbar
+      bg="light"
+      expand="lg"
+      className={`${scrolled ? "scrolled" : ""} ${
+        activeLink === "" ? "mainPage" : ""
+      } `}
+    >
       <Container>
         <Navbar.Brand href="/" onClick={() => onUpdateActiveLink("")}>
-          React-Bootstrap
+          <Image src={TempPic} alt="Profile Pic" width={36} height={36} />
+          Tristan
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="me-auto"></Nav>
+          <Nav>
             <Nav.Link
               href="/profile"
               className={`navbar-link ${
@@ -70,11 +82,16 @@ const NavBar = () => {
             >
               Contact Me
             </Nav.Link>
-          </Nav>
-          <Nav>
-            <Nav.Link href="#deets">More deets</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
-              Dank memes
+            <Nav.Link href="https://www.linkedin.com/in/tristan-bacolod-981174160/">
+              <Image
+                src={LinkedIn}
+                alt="LinkedIn Link"
+                width={36}
+                height={36}
+              />
+            </Nav.Link>
+            <Nav.Link href="https://github.com/TristanBac1">
+              <Image src={GitHub} alt="Github Link" width={36} height={36} />
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

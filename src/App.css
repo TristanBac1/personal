@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #363543;
 }
 
 * {
@@ -11,6 +12,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 75px;
+  background-color: #363543;
 }
 
 body {
@@ -34,37 +36,65 @@ h6 {
 }
 
 .navbar {
-  background-color: red !important;
+  background-color: #282832 !important;
 }
 
-.navbar-brand {
-  background-color: aqua;
+.mainPage {
+  background-color: #363543 !important;
+}
+
+.navbar-brand,
+.navbar-brand:hover {
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.navbar-link {
+  color: #cccccc;
+  font-size: 20px;
 }
 
 a.nav-link.navbar-link:hover {
-  background-color: yellow;
+  color: white;
+  font-weight: 600;
 }
 
 .activeLink {
-  background-color: orange;
-  color: blue;
+  color: white;
+  font-weight: 600;
+  font-size: 24px;
 }
 
 .navbar-collapse {
-  background-color: green;
 }
 
 .navbar-nav {
   color: white;
-  background-color: purple;
+  display: flex;
+  align-items: center;
 }
 
 .footer {
   left: 0;
   bottom: 0;
   width: 100%;
+  padding-top: 16px;
   text-align: center;
-  background-color: pink;
+  background-color: #363549;
+  color: white;
+  font-size: 14px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 8px;
+  padding-bottom: 16px;
+  align-items: center;
+  justify-content: center;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap");
@@ -83,7 +113,7 @@ a.nav-link.navbar-link:hover {
   background-repeat: no-repeat;
   height: 80vh;
   border-radius: 50px;
-  color: #fff;
+  color: #363543;
   cursor: pointer;
   flex: 0.5;
   margin: 10px;
@@ -110,7 +140,7 @@ a.nav-link.navbar-link:hover {
 }
 
 .home {
-  height: 10vh;
+  height: auto;
 }
 
 @media (max-width: 600px) {
