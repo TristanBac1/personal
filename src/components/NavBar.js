@@ -43,7 +43,7 @@ const NavBar = () => {
       bg="light"
       expand="lg"
       className={`${scrolled ? "scrolled" : ""} ${
-        activeLink === "" ? "mainPage" : ""
+        activeLink === "" ? "main-page" : ""
       } `}
     >
       <Container>

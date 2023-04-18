@@ -1,3 +1,9 @@
+:root {
+  --placeholder-text-color: #888888;
+  --background: #363543;
+  --background-secondary: #282832;
+}
+
 .App {
   text-align: center;
   background-color: #363543;
@@ -20,6 +26,7 @@ body {
   overflow-x: hidden;
   position: relative;
   font-family: "Centra", sans-serif;
+  color: white;
 }
 
 h1,
@@ -31,15 +38,16 @@ h6 {
   margin: 0;
   padding: 0;
   line-height: normal;
-  color: lightsalmon;
+  color: white;
   font-size: 48px;
 }
 
 .navbar {
   background-color: #282832 !important;
+  height: 79px;
 }
 
-.mainPage {
+.main-page {
   background-color: #363543 !important;
 }
 
@@ -53,8 +61,161 @@ h6 {
   align-items: center;
 }
 
+.info-section-right {
+  padding: 0 16px 16px 16px;
+  margin: 0 16px 48px 8px;
+  background-color: var(--background);
+}
+
+.info-section-left {
+  padding: 16px;
+  margin: 0 8px 0 16px;
+  background-color: var(--background);
+  font-size: 1rem;
+}
+
+.phone-number {
+  font-weight: bold;
+  padding-left: 8px;
+  font-size: 1.5rem;
+}
+
+.form-page-contact {
+  display: flex;
+  gap: 8px;
+  flex-direction: row;
+  background-color: var(--background-secondary);
+}
+
+.form-page-contact-section {
+  margin-top: -20px;
+  z-index: 1;
+}
+
+.form-page-contact-header {
+  width: 100%;
+  background-color: #3f3e4e;
+}
+
+.form-error-input {
+  border-bottom: 2px solid #a64949 !important;
+}
+
+.form-error-text {
+  color: #a64949;
+}
+
+.email-section-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-section {
+  background-color: #3d3c4b;
+
+  border: none;
+  box-shadow: none;
+  color: white;
+  width: 100%;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-gap {
+  gap: 16px;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(90, 90, 90);
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+.flex-column {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-section-right input::placeholder,
+.info-section-right select::placeholder,
+.info-section-right textarea::placeholder {
+  font-weight: 400;
+}
+
+.info-section-right input:not([type="submit"]),
+.info-section-right select,
+.info-section-right textarea {
+  font-weight: bold;
+}
+
+.info-section-right input:focus,
+.info-section-right select:focus,
+.info-section-right textarea:focus {
+  font-weight: 400;
+  outline: none;
+  border-bottom: 2px solid #fff !important;
+}
+
+.form-dropdown {
+  width: 100%;
+}
+
+.form-dropdown select:required:invalid {
+  color: var(--placeholder-text-color);
+  font-weight: 400;
+}
+
+.form-dropdown option[value=""][disabled] {
+  display: none;
+}
+
+.form-dropdown option {
+  color: white;
+}
+
+.form-email {
+  width: 100%;
+}
+
+.flex-column label {
+  text-align: left;
+  color: var(--placeholder-text-color);
+  font-size: 12px;
+}
+
+.form-background-image {
+  background-color: aqua;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+
+.form-page-header {
+  position: absolute;
+  bottom: 0;
+  margin: 0 0 64px 64px;
+  left: 0;
+  z-index: 1;
+}
+
+.form-page-header h1 {
+  font-weight: bolder;
+}
+
 .navbar-link {
   color: #cccccc;
+  padding-top: 29px;
   font-size: 20px;
 }
 
@@ -67,6 +228,7 @@ a.nav-link.navbar-link:hover {
   color: white;
   font-weight: 600;
   font-size: 24px;
+  padding-top: 27px;
 }
 
 .navbar-collapse {
