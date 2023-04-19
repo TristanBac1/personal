@@ -6,7 +6,7 @@ import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
 const Home = () => {
   return (
-    <div class="home">
+    <div className="home">
       <Parallax pages={4}>
         <ParallaxLayer
           offset={0}

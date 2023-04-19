@@ -2,6 +2,7 @@
   --placeholder-text-color: #888888;
   --background: #363543;
   --background-secondary: #282832;
+  --form-header-height: 75px;
 }
 
 .App {
@@ -45,6 +46,7 @@ h6 {
 .navbar {
   background-color: #282832 !important;
   height: 79px;
+  transition: top 0.3s ease-in-out;
 }
 
 .main-page {
@@ -88,12 +90,15 @@ h6 {
 }
 
 .form-page-contact-section {
-  margin-top: -20px;
+  margin-top: calc(
+    (var(--form-header-height) / 3) - (var(--form-header-height))
+  );
   z-index: 1;
 }
 
 .form-page-contact-header {
   width: 100%;
+  height: var(--form-header-height);
   background-color: #3f3e4e;
 }
 
@@ -302,7 +307,7 @@ a.nav-link.navbar-link:hover {
 }
 
 .home {
-  height: auto;
+  height: 80vh;
 }
 
 @media (max-width: 600px) {

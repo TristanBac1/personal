@@ -10,23 +10,27 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 
 const NavBar = () => {
   const [activeLink, setActiveLink] = useState("");
-  const [scrolled, setScrolled] = useState(false);
+  const [lastScrollTop, setLastScrollTop] = useState(0);
+  const [navbarTop, setNavbarTop] = useState(0);
 
   useEffect(() => {
-    const onScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
+    const handleScroll = () => {
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop > lastScrollTop) {
+        setNavbarTop("-80px");
       } else {
-        setScrolled(false);
+        setNavbarTop("0");
       }
+
+      setLastScrollTop(scrollTop);
     };
 
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-    };
-  }, []);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollTop]);
 
   const onUpdateActiveLink = (value) => {
     localStorage.setItem("activeTabIndex", value);
@@ -42,9 +46,9 @@ const NavBar = () => {
     <Navbar
       bg="light"
       expand="lg"
-      className={`${scrolled ? "scrolled" : ""} ${
-        activeLink === "" ? "main-page" : ""
-      } `}
+      sticky="top"
+      style={{ top: navbarTop }}
+      className={`${activeLink === "" ? "main-page" : ""} `}
     >
       <Container>
         <Navbar.Brand href="/" onClick={() => onUpdateActiveLink("")}>

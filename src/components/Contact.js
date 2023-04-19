@@ -62,9 +62,10 @@ const Contact = () => {
 
   return (
     <div className="form-page">
-      <div className="form-background-image" />
-      <div className="form-page-header">
-        <h1>Have a chat with me!</h1>
+      <div className="form-background-image">
+        <div className="form-page-header">
+          <h1>Have a chat with me!</h1>
+        </div>
       </div>
       <div className="form-page-contact">
         <div className="form-page-contact-section phone-section col-lg-5">
@@ -147,11 +148,6 @@ const Contact = () => {
               <div className="col-lg-12 flex-row ">
                 <div className="flex-column col-lg-12">
                   <label htmlFor="message">Message</label>
-                  {formErrors.message && (
-                    <span className="form-error-text">
-                      {formErrors.message}
-                    </span>
-                  )}
                   <textarea
                     id="message"
                     name="message"
@@ -162,6 +158,11 @@ const Contact = () => {
                       formErrors.message ? "form-error-input" : ""
                     }`}
                   />
+                  {formErrors.message && (
+                    <span className="form-error-text">
+                      {formErrors.message}
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="col-lg-12 flex-column">
